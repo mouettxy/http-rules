@@ -13,6 +13,7 @@ import { defineConfig, type Plugin } from 'vite'
 import { defineViteConfig as define } from './define.config'
 import manifest from './manifest.config'
 import packageJson from './package.json'
+import svgLoader from 'vite-svg-loader';
 
 const transformHtmlPlugin = (data) =>
   <Plugin>{
@@ -25,7 +26,6 @@ const transformHtmlPlugin = (data) =>
     },
   }
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -39,10 +39,8 @@ export default defineConfig({
 
     VueRouter({
       root: '.',
-      // Add your own custom pages here. Just add it to the array. Example: 'src/welcome/pages'
       routesFolder: [
         { src: 'src/pages', path: 'common/' },
-        { src: 'src/content-script/iframe/pages', path: 'iframe/' },
         { src: 'src/options/pages', path: 'options/' },
         { src: 'src/popup/pages', path: 'popup/' },
         { src: 'src/setup/pages', path: 'setup/' },
@@ -53,6 +51,8 @@ export default defineConfig({
 
     vue(),
 
+    svgLoader(),
+
     // VueDevTools(),
 
     AutoImport({
@@ -61,13 +61,10 @@ export default defineConfig({
       dirs: ['src/composables/'],
     }),
 
-    // https://github.com/antfu/unplugin-vue-components
     Components({
       dirs: ['src/components'],
-      // generate `components.d.ts` for ts support with Volar
       dts: 'src/components.d.ts',
       resolvers: [
-        // auto import icons
         IconsResolver({
           prefix: 'i',
           enabledCollections: ['mdi'],
@@ -75,14 +72,12 @@ export default defineConfig({
       ],
     }),
 
-    // https://github.com/antfu/unplugin-icons
     Icons({
       autoInstall: true,
       compiler: 'vue3',
       scale: 1.5,
     }),
 
-    // rewrite assets to use relative path
     {
       name: 'assets-rewrite',
       order: 'post',
@@ -100,14 +95,6 @@ export default defineConfig({
     }),
   ],
   define,
-  build: {
-    rollupOptions: {
-      input: {
-        iframe: 'src/content-script/iframe/index.html',
-        setup: 'src/setup/index.html',
-      },
-    },
-  },
   server: {
     port: 8888,
     strictPort: true,

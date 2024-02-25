@@ -68,10 +68,6 @@ const count = computed(() => store.count)
 </template>
 
 <style scoped>
-.btn {
-  @apply px-4 py-2 rounded-md bg-blue-500 text-white;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;

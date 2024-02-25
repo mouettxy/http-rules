@@ -3,6 +3,7 @@
   "semi": false,
   "singleAttributePerLine": true,
   "singleQuote": true,
+  "printWidth": 140,
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,

@@ -7,8 +7,19 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Button: typeof import('./components/Button.vue')['default']
+    ButtonIcon: typeof import('./components/ButtonIcon.vue')['default']
     Changelog: typeof import('./components/Changelog.vue')['default']
+    copy: typeof import('./components/Select copy.vue')['default']
+    Input: typeof import('./components/Input.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Rule: typeof import('./components/Rule.vue')['default']
+    RuleGroup: typeof import('./components/RuleGroup.vue')['default']
+    RuleHeader: typeof import('./components/RuleHeader.vue')['default']
+    RuleList: typeof import('./components/RuleList.vue')['default']
+    RuleSet: typeof import('./components/RuleSet.vue')['default']
+    Select: typeof import('./components/Select.vue')['default']
+    Switch: typeof import('./components/Switch.vue')['default']
   }
 }

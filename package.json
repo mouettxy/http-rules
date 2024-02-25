@@ -1,7 +1,16 @@
 {
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "immer": "^10.0.3",
+    "lucide-vue-next": "^0.340.0",
     "marked": "^11.1.1",
+    "nanoid": "^5.0.6",
     "pinia": "^2.1.7",
+    "radix-vue": "^1.4.8",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
+    "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
   },

@@ -1,24 +1,36 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import IconAdd from '@/assets/add.svg'
+import IconGroup from '@/assets/group.svg'
+</script>
 
 <template>
-  <div class="text-center m-4">
-    <h1 class="text-3xl font-bold underline pb-6">Hello world from Options!</h1>
+  <header class="flex justify-between">
+    <h1 class="text-4xl font-medium">HTTP Rules</h1>
 
-    <RouterLink to="/common/about">About</RouterLink>
-  </div>
+    <div class="flex gap-2">
+      <Button
+        color="secondary"
+        size="default"
+      >
+        <IconGroup
+          width="24"
+          height="24"
+        />
+        Add Group
+      </Button>
+      <Button
+        color="primary"
+        size="default"
+      >
+        <IconAdd
+          width="24"
+          height="24"
+        />
+        Add Rule
+      </Button>
+    </div>
+  </header>
+  <section>
+    <RuleList class="mt-10" />
+  </section>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
