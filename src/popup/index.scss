@@ -1,10 +1,12 @@
 body {
-  width: 480px;
+  width: 500px;
+  height: 600px;
   margin: 0 auto;
+  padding: 24px 12px 12px 12px;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   overflow-y: scroll;
 }
 
-body {
-  border: 1px solid rgba(0, 0, 0, 0.03125) !important;
-  box-shadow: 0px 0.3px 0.9px rgb(0 0 0 / 10%), 0px 1.6px 3.6px rgb(0 0 0 / 10%) !important;
+html {
+  overflow-y: scroll;
 }
