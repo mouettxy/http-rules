@@ -13,7 +13,7 @@ const model = defineModel<boolean>()
       class="absolute cursor-pointer transition-transform duration-100 top-0 left-0 w-4 h-4 rounded-full"
       :class="{
         'translate-x-full bg-primary': model,
-        'translate-x-0 bg-gray-600': !model,
+        'translate-x-0 bg-gray-1000': !model,
       }"
     ></div>
   </label>

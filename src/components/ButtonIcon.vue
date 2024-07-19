@@ -49,30 +49,30 @@ defineEmits(['click'])
   @apply text-gray-1000;
 }
 .btn-icon-dark:hover {
-  @apply bg-gray-200;
+  @apply bg-gray-100;
 }
 .btn-icon-dark:active {
-  @apply bg-gray-300;
+  @apply bg-gray-200;
 }
 
 .btn-icon-darker {
   @apply text-gray-1000;
 }
 .btn-icon-darker:hover {
-  @apply bg-gray-300;
+  @apply bg-gray-100;
 }
 .btn-icon-darker:active {
-  @apply bg-gray-400;
+  @apply bg-gray-200;
 }
 
 .btn-icon-gray-filled {
-  @apply bg-gray-300;
+  @apply bg-gray-200;
 }
 .btn-icon-gray-filled:hover {
-  @apply bg-gray-400;
+  @apply bg-gray-300;
 }
 .btn-icon-gray-filled:active {
-  @apply bg-gray-500;
+  @apply bg-gray-400;
 }
 
 .btn-icon--size-default {

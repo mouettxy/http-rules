@@ -16,12 +16,7 @@ const attrs = useAttrs()
 
 const style = computed(() => {
   const classes = (attrs.class || '') as string
-  return classMerge([
-    'btn',
-    `btn-${props.color}`,
-    `btn--size-${props.size}`,
-    ...classes.split(' '),
-  ])
+  return classMerge(['btn', `btn-${props.color}`, `btn--size-${props.size}`, ...classes.split(' ')])
 })
 
 defineEmits(['click'])
@@ -40,7 +35,7 @@ defineEmits(['click'])
 
 <style scoped>
 .btn {
-  @apply rounded-md cursor-pointer flex gap-2 items-center transition-opacity duration-100;
+  @apply rounded-md cursor-pointer flex gap-2 items-center justify-center transition-opacity duration-100;
 }
 .btn:hover {
   @apply opacity-90;
@@ -54,17 +49,21 @@ defineEmits(['click'])
 }
 
 .btn-secondary {
-  @apply bg-gray-200 text-gray-1000;
+  @apply bg-gray-100 text-gray-1000;
 }
 
 .btn-gray {
-  @apply bg-gray-300 text-gray-1000;
+  @apply bg-gray-200 text-gray-1000;
 }
 
 .btn--size-default {
   @apply px-6 py-2 text-base;
 }
 .btn--size-small {
-  @apply px-3 py-1 text-sm;
+  @apply px-4 py-1 text-sm gap-0.5;
+}
+
+.btn--size-small >>> svg {
+  margin-left: -4px;
 }
 </style>

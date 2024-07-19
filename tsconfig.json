@@ -17,7 +17,7 @@
       "~/*": ["./src/*"],
       "src/*": ["./src/*"]
     },
-    "types": ["unplugin-icons/types/vue"]
+    "types": ["unplugin-icons/types/vue", "chrome-types"]
   },
   "include": [
     "vite.config.ts",

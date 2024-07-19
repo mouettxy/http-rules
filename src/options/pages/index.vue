@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import IconAdd from '@/assets/add.svg'
 import IconGroup from '@/assets/group.svg'
+import { useRulesStore } from '@/stores/rules.store'
+
+const rulesStore = useRulesStore()
 </script>
 
 <template>
@@ -11,6 +14,7 @@ import IconGroup from '@/assets/group.svg'
       <Button
         color="secondary"
         size="default"
+        @click="() => rulesStore.addGroup()"
       >
         <IconGroup
           width="24"
@@ -21,6 +25,7 @@ import IconGroup from '@/assets/group.svg'
       <Button
         color="primary"
         size="default"
+        @click="() => rulesStore.addRule()"
       >
         <IconAdd
           width="24"

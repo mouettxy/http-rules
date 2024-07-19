@@ -8,7 +8,7 @@ const props = defineProps<{
 <template>
   <select
     v-model="model"
-    class="appearance-none bg-none px-2 py-1 text-base text-gray-1000 border-0 bg-gray-300 flex items-center rounded-md"
+    class="appearance-none bg-none px-2 py-1 text-base text-gray-1000 border-0 bg-gray-200 flex items-center rounded-md"
   >
     <option
       v-for="option in props.options"

@@ -23,12 +23,44 @@ const rulePinned = computed({
     rulesStore.updateRulePinned(props.rule.id, value)
   },
 })
+
+const onEdit = () => {
+  // rulesStore.editRule(props.rule.id)
+}
+
+const onDuplicate = () => {
+  if (props.rule.type === 'group') {
+    return rulesStore.duplicateGroup(props.rule.id)
+  }
+
+  return rulesStore.duplicateRule(props.rule.id)
+}
+
+const onDelete = () => {
+  if (props.rule.type === 'group') {
+    return rulesStore.deleteGroup(props.rule.id)
+  }
+
+  return rulesStore.deleteRule(props.rule.id)
+}
+
+const onExpand = (event: MouseEvent) => {
+  if (event.target !== event.currentTarget) {
+    return
+  }
+  if (props.rule.type === 'group') {
+    return rulesStore.toggleGroupExpanded(props.rule.id)
+  }
+
+  return rulesStore.toggleRuleExpanded(props.rule.id)
+}
 </script>
 
 <template>
   <button
     type="button"
     class="flex justify-between items-center"
+    @click="onExpand"
   >
     <div class="flex gap-4 items-center">
       <IconGroup
@@ -37,9 +69,20 @@ const rulePinned = computed({
         height="16"
       />
       <h2 class="text-xl font-medium">{{ rule.title }}</h2>
-      <ButtonIcon :color="rule.type === 'group' ? 'dark' : 'darker'">
-        <IconMore />
-      </ButtonIcon>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <ButtonIcon :color="rule.type === 'group' ? 'dark' : 'darker'">
+            <IconMore />
+          </ButtonIcon>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem @click="onEdit">Edit</DropdownMenuItem>
+          <DropdownMenuItem @click="onDuplicate">Duplicate</DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem @click="onDelete">Delete</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
     <div class="flex gap-6 items-center">
       <ButtonIcon

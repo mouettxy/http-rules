@@ -8,7 +8,7 @@ const props = defineProps<{
 <template>
   <input
     v-model="model"
-    class="appearance-none bg-none px-4 py-1 text-base text-gray-1000 border-0 bg-gray-300 flex items-center rounded-md w-full"
+    class="appearance-none bg-none px-4 py-1 text-base text-gray-1000 border-2 border-gray-200 bg-gray-50 flex items-center rounded-md w-full"
     :placeholder="placeholder"
   />
 </template>

@@ -3,9 +3,7 @@ import packageJson from './package.json'
 
 const { version, name, description, displayName } = packageJson
 
-const [major, minor, patch, label = '0'] = version
-  .replace(/[^\d.-]+/g, '')
-  .split(/[.-]/)
+const [major, minor, patch, label = '0'] = version.replace(/[^\d.-]+/g, '').split(/[.-]/)
 
 export default defineManifest(async (env) => ({
   name: env.mode === 'staging' ? `[INTERNAL] ${name}` : displayName || name,
